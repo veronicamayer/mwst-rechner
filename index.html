@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Mehrwertsteuer-Rechner</h1>
+    <section>
+        <form onsubmit="return false">
+            <article>
+                <legend>Was soll berechnet werden?</legend>
+
+                <div>
+                    <input type="radio" id="aufschlagen" name="bruttoNetto" value="nettoBrutto" checked>
+                    <label for="aufschlagen">Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="abziehen" name="bruttoNetto" value="bruttoNetto">
+                    <label for="abziehen">Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+                </div>
+            </article> 
+
+            <article>
+                <legend>Mehrwertsteuersatz</legend>
+
+                <input type="radio" id="neunzehn" name="steuersatz" value="19" checked>
+                <label for="neunzehn">19 %</label>
+
+                <input type="radio" id="sieben" name="steuersatz" value="7">
+                <label for="sieben">7 %</label>
+            </article>
+
+            <article>
+                <legend class="required">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</legend>
+                <input type="text" name="betragInput" id="betragInput" data-type="currency" placeholder="1000,00€" required autocomplete="off" onfocus="this.value=''">            
+            </article>
+
+            <input type="submit" value="BERECHNEN">
+        </form>
+
+        <div id="ergebnis">
+            <h5>Ergebnis</h5>
+
+            <article>
+                <p>Mehrwertsteuerbetrag</p>
+                <h4 id="endsteuer"></h4>
+            </article>
+
+            <article>
+                <p id="labelEndpreis"></p>
+                <h4 id="endpreis"></h4>
+            </article>
+        </div>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

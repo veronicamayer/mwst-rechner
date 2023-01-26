@@ -1,0 +1,103 @@
+@use "mixins.scss";
+@use "variables.scss";
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5vh auto;
+    width: 400px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 2vh;
+}
+
+section {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+article {
+    background-color: #f3f6f8;
+    padding: 1vh 1vw;
+    margin-bottom: 0.5vh;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+    legend {
+        margin-bottom: 2vh;
+    }
+
+    input {
+        margin-bottom: 1.5vh;
+    }
+
+    #sieben {
+        margin-left: 2vw;
+    }
+
+    .required {
+        margin-bottom: 1vh;
+    }
+
+    .required:after {
+        content:" *";
+        color: red;
+    }
+
+    #betragInput {
+        margin-bottom: 0vh;
+    }
+
+    input[type="text"] {
+        padding: 1vh 1vw;
+        border-radius: 5px;
+        border: 1px solid rgb(133, 133, 133);
+        width: 100px;
+    }
+
+    input[type="radio"] {
+        margin-right: 0.5vw;
+    }
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    background-color: #236ca3;
+    color: white;
+    padding: 1vh 0;
+    width: 380px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    margin: 2vh auto;
+}
+
+#ergebnis {
+    display: none;
+
+    h5 {
+        padding: 2vh 1vw;
+        color: #266fbc;
+        border-top: 1px solid black;
+    }
+
+    #endpreis, #endsteuer {
+        padding: 2vh 0;
+        color: #133955;
+    }
+}
