@@ -37,25 +37,26 @@
 
             <article>
                 <legend class="required">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</legend>
-                <input type="text" name="betragInput" id="betragInput" data-type="currency" placeholder="1000,00€" required autocomplete="off" onfocus="this.value=''">            
+                <div id="flex">
+                    <input type="number" name="betragInput" id="betragInput" step="0.1" placeholder="1000,00" required autocomplete="off">    
+                    <p>€</p>     
+                </div>   
             </article>
 
             <input type="submit" value="BERECHNEN">
         </form>
 
-        <div id="ergebnis">
-            <h5>Ergebnis</h5>
+        <h5>Ergebnis</h5>
 
-            <article>
-                <p>Mehrwertsteuerbetrag</p>
-                <h4 id="endsteuer"></h4>
-            </article>
+        <article>
+            <p>Mehrwertsteuerbetrag</p>
+            <h4 id="endsteuer">0,00€</h4>
+        </article>
 
-            <article>
-                <p id="labelEndpreis"></p>
-                <h4 id="endpreis"></h4>
-            </article>
-        </div>
+        <article>
+            <p id="labelEndpreis">Bruttobetrag (Endpreis)</p>
+            <h4 id="endpreis">0,00€</h4>
+        </article>
     </section>
 
     <script src="./assets/js/main.js"></script>

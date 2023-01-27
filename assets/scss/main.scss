@@ -46,6 +46,15 @@ article {
         margin-bottom: 1.5vh;
     }
 
+    #flex {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-left: 2vw;
+        }
+    }
+
     #sieben {
         margin-left: 2vw;
     }
@@ -63,11 +72,17 @@ article {
         margin-bottom: 0vh;
     }
 
-    input[type="text"] {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type="number"] {
         padding: 1vh 1vw;
         border-radius: 5px;
         border: 1px solid rgb(133, 133, 133);
-        width: 100px;
+        width: 80px;
+        text-align: right;
     }
 
     input[type="radio"] {
@@ -87,17 +102,14 @@ input[type="submit"] {
     margin: 2vh auto;
 }
 
-#ergebnis {
-    display: none;
-
-    h5 {
-        padding: 2vh 1vw;
-        color: #266fbc;
-        border-top: 1px solid black;
-    }
-
-    #endpreis, #endsteuer {
-        padding: 2vh 0;
-        color: #133955;
-    }
+h5 {
+    padding: 2vh 1vw;
+    color: #266fbc;
+    border-top: 1px solid black;
 }
+
+#endpreis, #endsteuer {
+    padding: 2vh 0;
+    color: #133955;
+}
+

@@ -2,23 +2,13 @@
 const betragInput = document.getElementById("betragInput");
 const submitForm = document.querySelector("form");
 const ergebnisDiv = document.getElementById("ergebnis");
-let price, vat, betrag;
-
+let price, vat;
 
 //Trigger 
-submitForm.addEventListener("submit", calculatePrice); // triggert anschließend auch currencyConverter
-betragInput.addEventListener("keyup", getBetrag); 
-
-//Funktionen
-function getBetrag() {
-    betrag = document.getElementById("betragInput").value.replace(",", ".");
-    console.log("Aktueller Betrag: " + betrag);
-}
-
-// 1. Steuern berechnen
-function calculatePrice() {
+submitForm.addEventListener("change", calculatePrice = () => {
     const nettoBrutto = document.getElementById('aufschlagen').checked;
     const steuersatz = parseFloat(document.querySelector('input[name="steuersatz"]:checked').value);
+    const betrag = betragInput.value;
 
     switch (nettoBrutto) {
         case true:
@@ -30,7 +20,13 @@ function calculatePrice() {
             
             console.log("Ergebnis: Steuerbetrag = " + vat + " Bruttobetrag = " + price);
             
-            currencyConverter(price, vat);
+            vat = `${vat.toFixed(2)} €`;
+            document.getElementById('endsteuer').innerHTML = vat.replace(".", ",");
+
+            price = `${price.toFixed(2)} €`;
+            document.getElementById('endpreis').innerHTML = price.replace(".", ",");
+
+            console.log("Ergebnisbereich formatiert: " + vat + " und " + price);
             return;
 
         case false:
@@ -42,31 +38,13 @@ function calculatePrice() {
 
             console.log("Ergebnis: Steuerbetrag = " + vat + " Nettobetrag = " + price);
 
-            currencyConverter(price, vat); 
-    };
-};
+            vat = `${vat.toFixed(2)} €`;
+            document.getElementById('endsteuer').innerHTML = vat.replace(".", ",");
 
-// 2. Zahlen in Währung formatieren 
-function currencyConverter(price, vat) {
-    // Pattern das unten für verschiedene Variablen verwendet werden kann
-    const formatter = new Intl.NumberFormat('de-DE', {
-        style: 'currency',
-        currency: 'EUR'
-    });
+            price = `${price.toFixed(2)} €`;
+            document.getElementById('endpreis').innerHTML = price.replace(".", ",");
 
-    // Fomatiert den Wert im Eingabefeld
-    let betragValue = formatter.format(betrag);
-    betragInput.value = betragValue;
-    console.log("Eingabefeld formatiert: " + betragValue);
-
-    // Fomatiert die Werte im Ergebnisbereich und gibt sie im HTML aus
-    vat = formatter.format(vat);
-    price = formatter.format(price);
-
-    document.getElementById('endsteuer').innerHTML = vat;  
-    document.getElementById('endpreis').innerHTML = price;
-    console.log("Ergebnisbereich formatiert: " + vat + " und " + price);
-
-    ergebnisDiv.style.display = "block";
-};
+            console.log("Ergebnisbereich formatiert: " + vat + " und " + price);
+    }
+});
 
