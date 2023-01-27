@@ -25,6 +25,12 @@ section {
     border-radius: 5px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 article {
     background-color: #f3f6f8;
     padding: 1vh 1vw;
@@ -67,14 +73,8 @@ article {
     input[type="radio"] {
         margin-right: 0.5vw;
     }
-
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 input[type="submit"] {
     background-color: #236ca3;

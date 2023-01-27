@@ -7,7 +7,7 @@ let price, vat, betrag;
 
 //Trigger 
 submitForm.addEventListener("submit", calculatePrice); // triggert anschließend auch currencyConverter
-betragInput.addEventListener("keypress", getBetrag); 
+betragInput.addEventListener("keyup", getBetrag); 
 
 //Funktionen
 function getBetrag() {
