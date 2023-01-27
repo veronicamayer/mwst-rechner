@@ -41,6 +41,13 @@ article legend {
 article input {
   margin-bottom: 1.5vh;
 }
+article #flex {
+  display: flex;
+  align-items: center;
+}
+article #flex p {
+  margin-left: 2vw;
+}
 article #sieben {
   margin-left: 2vw;
 }
@@ -54,11 +61,16 @@ article .required:after {
 article #betragInput {
   margin-bottom: 0vh;
 }
-article input[type=text] {
+article input::-webkit-outer-spin-button,
+article input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+article input[type=number] {
   padding: 1vh 1vw;
   border-radius: 5px;
   border: 1px solid rgb(133, 133, 133);
-  width: 100px;
+  width: 80px;
+  text-align: right;
 }
 article input[type=radio] {
   margin-right: 0.5vw;
@@ -75,15 +87,13 @@ input[type=submit] {
   margin: 2vh auto;
 }
 
-#ergebnis {
-  display: none;
-}
-#ergebnis h5 {
+h5 {
   padding: 2vh 1vw;
   color: #266fbc;
   border-top: 1px solid black;
 }
-#ergebnis #endpreis, #ergebnis #endsteuer {
+
+#endpreis, #endsteuer {
   padding: 2vh 0;
   color: #133955;
 }
